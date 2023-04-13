@@ -1,9 +1,8 @@
-import { Message } from "./Message";
 import { useForm } from "../hooks/useForm";
 
 export const FormWithCustomHook = () => {
 
-  const {formState, onInputChange, username, email, password} = useForm({
+  const {formState, onInputChange, onResetForm, username, email, password} = useForm({
     username: '',
     email: '',
     password: ''
@@ -41,8 +40,7 @@ export const FormWithCustomHook = () => {
       </div>
     </div>
 
-
-    { (username === 'dtoledoz2') && <Message /> }
+    <button onClick={onResetForm} className="btn btn-danger mt-2">Reset</button>
 
 
   </>
